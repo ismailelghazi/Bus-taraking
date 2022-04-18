@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pfe">
         <activity
-            android:name=".layout_2"
+            android:name=".home"
             android:exported="false" />
+        <activity
+            android:name=".layout_2"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

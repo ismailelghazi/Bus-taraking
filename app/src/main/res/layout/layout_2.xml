@@ -5,13 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".layout_2"
-    tools:ignore="ExtraText">
+    tools:ignore="ExtraText"
+    android:background="@drawable/back">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonOnBoardingAction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="20px"
+        android:layout_marginBottom="15px"
+        android:textColor="@color/blanc"
+        android:textSize="15sp"
+        android:fontFamily="@font/poppins"
         app:shapeAppearanceOverlay="@style/CustomShapeOVerlay"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -27,6 +32,7 @@
         android:layout_marginBottom="56dp"
         android:orientation="horizontal"
         android:padding="15dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/buttonOnBoardingAction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

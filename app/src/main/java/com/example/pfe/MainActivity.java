@@ -12,9 +12,10 @@ public class MainActivity extends AppCompatActivity {
         Intent main = new Intent(this,layout_2.class);
         startActivity(main);
     }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onResume() {
+        super.onResume();
         setContentView(R.layout.activity_main);
         new CountDownTimer(900,1000){
             ImageView img_circle = findViewById(R.id.whiteCircleImg);
@@ -31,5 +32,11 @@ public class MainActivity extends AppCompatActivity {
                 start_activity();
             }
         }.start();
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
     }
 }
