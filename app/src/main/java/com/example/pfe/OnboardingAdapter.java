@@ -35,15 +35,18 @@ public class OnboardingAdapter extends RecyclerView.Adapter<OnboardingAdapter.On
     }
 
     class OnboardingViewHolder extends RecyclerView.ViewHolder {
+        //attribute
         private TextView textTitle;
         private TextView textDescription;
         private ImageView imageOnboarding;
+        //function on
         OnboardingViewHolder(@NonNull View itemView) {
             super(itemView);
             textTitle = itemView.findViewById(R.id.textTitle);
             textDescription = itemView.findViewById(R.id.textDescription);
             imageOnboarding = itemView.findViewById(R.id.iamge_Onboarding);
         }
+        //
         void setOnBoardingData(OnboardingItem onboardingItem){
             textTitle.setText(onboardingItem.getTitle());
             textDescription.setText(onboardingItem.getDescription());

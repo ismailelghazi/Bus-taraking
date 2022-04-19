@@ -4,4 +4,6 @@
     <color name="blanc">#faf8e0</color>
     <color name="gren">#49d2b1</color>
     <color name="gray">#C4C4C4</color>
+    <color name="black">#000000</color>
+
 </resources>
