@@ -9,7 +9,7 @@
     tools:context=".home">
 
    <TextView
-       android:layout_marginTop="120dp"
+       android:layout_marginTop="80dp"
        android:layout_marginLeft="15dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -25,5 +25,45 @@
        android:text=""
        android:textSize="14dp"
        android:textColor="#929799"/>
+   <com.google.android.material.textfield.TextInputLayout
+       android:layout_marginTop="15dp"
+       android:id="@+id/email"
+       style="@style/MyDenseOutlined"
+       android:layout_marginLeft="35dp"
+       android:layout_marginRight="35dp"
+       app:boxCornerRadiusBottomEnd="15dp"
+       app:boxCornerRadiusTopStart="15dp"
+       app:boxCornerRadiusTopEnd="15dp"
+       app:boxCornerRadiusBottomStart="15dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:hint="Full Name"
+       android:textColorHint="#d4d6d7"
+       >
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+   </com.google.android.material.textfield.TextInputLayout>
+      <com.google.android.material.textfield.TextInputLayout
+       android:layout_marginTop="5dp"
+          style="@style/MyDenseOutlined"
+          android:id="@+id/textFullname"
+       android:layout_marginLeft="35dp"
+       android:layout_marginRight="35dp"
+       app:boxCornerRadiusBottomEnd="15dp"
+       app:boxCornerRadiusTopStart="15dp"
+       app:boxCornerRadiusTopEnd="15dp"
+       app:boxCornerRadiusBottomStart="15dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/textFullname"
+       android:hint="Your email"
+       android:textColorHint="#d4d6d7">
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          />
+   </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
