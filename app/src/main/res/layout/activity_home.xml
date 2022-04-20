@@ -57,7 +57,7 @@
        app:boxCornerRadiusBottomStart="15dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_below="@id/textFullname"
+       android:layout_below="@id/email"
        android:hint="Your email"
        android:textColorHint="#d4d6d7">
       <com.google.android.material.textfield.TextInputEditText
@@ -65,5 +65,59 @@
           android:layout_height="wrap_content"
           />
    </com.google.android.material.textfield.TextInputLayout>
+   <com.google.android.material.textfield.TextInputLayout
+       android:layout_marginTop="5dp"
+       android:id="@+id/mot_depass"
+       style="@style/MyDenseOutlined"
+       android:layout_marginLeft="35dp"
+       android:layout_marginRight="35dp"
+       app:boxCornerRadiusBottomEnd="15dp"
+       app:boxCornerRadiusTopStart="15dp"
+       app:boxCornerRadiusTopEnd="15dp"
+       app:boxCornerRadiusBottomStart="15dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:hint="Password"
+       app:passwordToggleEnabled="true"
+       app:passwordToggleTint="@color/gray"
+       android:textColorHint="#d4d6d7"
+       >
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="textPassword"
+          android:imeOptions="actionUnspecified"
+          />
+      />
+   </com.google.android.material.textfield.TextInputLayout>
+   <com.google.android.material.textfield.TextInputLayout
+       android:layout_marginTop="5dp"
+       android:id="@+id/co"
+       style="@style/MyDenseOutlined"
+       android:layout_marginLeft="35dp"
+       android:layout_marginRight="35dp"
+       app:boxCornerRadiusBottomEnd="15dp"
+       app:boxCornerRadiusTopStart="15dp"
+       app:boxCornerRadiusTopEnd="15dp"
+       app:boxCornerRadiusBottomStart="15dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:hint="Confirm Password"
+       app:passwordToggleEnabled="true"
+       app:passwordToggleTint="@color/gray"
+       android:textColorHint="#d4d6d7"
+       >
+      <com.google.android.material.textfield.TextInputEditText
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:inputType="textPassword"
+          android:imeOptions="actionUnspecified"
+          />
+      />
+   </com.google.android.material.textfield.TextInputLayout>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="50dp">
 
+   </RelativeLayout>
 </LinearLayout>

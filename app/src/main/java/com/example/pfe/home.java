@@ -8,9 +8,14 @@ import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class home extends AppCompatActivity {
+
+
 
 
     @Override
@@ -26,4 +31,9 @@ public class home extends AppCompatActivity {
         String styledText = "Create an account to access all the features of <strong><font color='#fa376c'>Tracking!</font></strong>.";
         textView.setText(Html.fromHtml(styledText), TextView.BufferType.SPANNABLE);
     }
+
+
+
+
+
 }
