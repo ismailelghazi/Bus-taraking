@@ -25,7 +25,7 @@
     </style>
     <style name="MyDenseOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="materialThemeOverlay">@style/MyThemeOverlayOutlinedDense</item>
-
+ 
     </style>
 
     <style name="MyThemeOverlayOutlinedDense">
