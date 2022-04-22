@@ -9,7 +9,7 @@
     tools:context=".home">
 
    <TextView
-       android:layout_marginTop="100dp"
+       android:layout_marginTop="95dp"
        android:layout_marginLeft="15dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -191,8 +191,8 @@
    </LinearLayout>
    <LinearLayout
        android:layout_marginTop="10dp"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
        android:orientation="horizontal">
       <TextView
           android:layout_marginLeft="20dp"
@@ -204,7 +204,7 @@
           android:textColor="@color/gray"/>
       <TextView
           android:id="@+id/login"
-          android:layout_width="match_parent"
+          android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text=""
           android:textSize="12dp"
