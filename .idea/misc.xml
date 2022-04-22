@@ -27,9 +27,14 @@
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/checked.xml" value="0.105" />
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/custom_checkbox.xml" value="0.105" />
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/unchecked.xml" value="0.105" />
-        <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/vector1_hero.xml" value="0.105" />
+        <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/vector_hero.xml" value="0.105" />
+        <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/vector_login.xml" value="0.105" />
+        <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/layout/activity_home.xml" value="0.18" />
+        <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/layout/activity_opt_password.xml" value="0.2" />
+        <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/layout/item_container_onboarding.xml" value="0.2" />
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/layout/layout_2.xml" value="0.2" />
       </map>
     </option>
