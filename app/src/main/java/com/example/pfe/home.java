@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,6 +67,7 @@ public class home extends AppCompatActivity {
         Intent intent = new Intent(this, login.class);
         startActivity(intent);
     }
+
     public void start()
     {
         TextView login = findViewById(R.id.login);
@@ -88,8 +90,6 @@ public class home extends AppCompatActivity {
             isEmailValid = true;
             emailError.setErrorEnabled(false);
         }
-
-
 
     }
 }

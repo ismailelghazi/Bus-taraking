@@ -7,26 +7,165 @@
     android:layout_height="match_parent"
     android:background="@drawable/vector_login"
     tools:context=".login"
-    android:orientation="horizontal">
-
-    <TextView
-        android:layout_width="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/back"
+        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="20dp"
+
+        android:src="@drawable/back_bnt"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
+        android:layout_marginLeft="15sp"
         android:fontFamily="@font/poppins"
         android:text="Welcome Back"
         android:textColor="@color/black"
         android:textSize="24dp" />
-
     <TextView
+        android:id="@+id/texts"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login to your account !"
+        android:textColor="#929799"
+        android:textSize="14dp" />
+    <com.google.android.material.textfield.TextInputLayout
+    android:layout_marginTop="40dp"
+    style="@style/MyDenseOutlined"
+    android:id="@+id/emailError"
+    android:layout_marginLeft="35dp"
+    android:layout_marginRight="35dp"
+    app:boxCornerRadiusBottomEnd="10dp"
+    app:boxCornerRadiusTopStart="10dp"
+    app:boxCornerRadiusTopEnd="10dp"
+    app:boxCornerRadiusBottomStart="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Your email"
+    android:textColorHint="#d4d6d7">
+    <EditText
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="150dp"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+    android:layout_marginTop="10dp"
+    android:id="@+id/mot_depass"
+    style="@style/MyDenseOutlined"
+    android:layout_marginLeft="35dp"
+    android:layout_marginRight="35dp"
+    app:boxCornerRadiusBottomEnd="10dp"
+    app:boxCornerRadiusTopStart="10dp"
+    app:boxCornerRadiusTopEnd="10dp"
+    app:boxCornerRadiusBottomStart="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Password"
+    app:passwordToggleEnabled="true"
+    app:passwordToggleTint="@color/gray"
+    android:textColorHint="#d4d6d7"
+        >
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:imeOptions="actionUnspecified"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/Forgot"
+        android:layout_marginTop="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:layout_marginLeft="250dp"
         android:fontFamily="@font/poppins"
-        android:text="Welcome Back"
-        android:textColor="@color/black"
-        android:textSize="24dp" />
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_week"
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="Login"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        app:shapeAppearanceOverlay="@style/CustomShapeOVerlay"
+        />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Or contine with"
+        android:textSize="12dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="@color/gray"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_google"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:text="Google"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:icon="@drawable/google"
+            app:iconGravity="textStart"
+            app:rippleColor="#FBF8F8" />
 
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:text="Facebook"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:icon="@drawable/faceb"
+            app:iconGravity="textStart"
+            app:rippleColor="#FBF8F8" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account ?"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/gray"/>
+        <TextView
+            android:id="@+id/Sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="12dp"
+            android:fontFamily="@font/poppins"
+            />
+    </LinearLayout>
 </LinearLayout>

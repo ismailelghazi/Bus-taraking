@@ -49,7 +49,6 @@
        android:layout_marginTop="10dp"
           style="@style/MyDenseOutlined"
           android:id="@+id/emailError"
-
           android:layout_marginLeft="35dp"
        android:layout_marginRight="35dp"
        app:boxCornerRadiusBottomEnd="10dp"
