@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "12293400169",
+    "project_id": "pfe-bustraking",
+    "storage_bucket": "pfe-bustraking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12293400169:android:3a109c9b42cc423bc2a4f8",
+        "android_client_info": {
+          "package_name": "com.example.pfe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12293400169-9166pu8ou6bvejdcjblm9bv41091sngh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXoM-pFuE2V4Oszhz6MfyqXD2OfzpqbLs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12293400169-9166pu8ou6bvejdcjblm9bv41091sngh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

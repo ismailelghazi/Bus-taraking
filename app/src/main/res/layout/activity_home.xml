@@ -77,15 +77,14 @@
        app:boxCornerRadiusBottomStart="10dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:hint="Password"
-       app:passwordToggleEnabled="true"
+       android:hint="Phone number"
        app:passwordToggleTint="@color/gray"
        android:textColorHint="#d4d6d7"
        >
       <com.google.android.material.textfield.TextInputEditText
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:inputType="textPassword"
+          android:inputType="number"
           android:imeOptions="actionUnspecified"
           />
 
@@ -102,7 +101,7 @@
        app:boxCornerRadiusBottomStart="10dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:hint="Confirm Password"
+       android:hint="Password"
        app:passwordToggleEnabled="true"
        app:passwordToggleTint="@color/gray"
        android:textColorHint="#d4d6d7"
