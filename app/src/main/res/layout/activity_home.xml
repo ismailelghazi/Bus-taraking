@@ -40,7 +40,8 @@
        android:hint="Full Name"
        android:textColorHint="#d4d6d7"
        >
-      <com.google.android.material.textfield.TextInputEditText
+      <EditText
+          android:id="@+id/name"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           />
@@ -67,7 +68,6 @@
    </com.google.android.material.textfield.TextInputLayout>
    <com.google.android.material.textfield.TextInputLayout
        android:layout_marginTop="10dp"
-       android:id="@+id/mot_depass"
        style="@style/MyDenseOutlined"
        android:layout_marginLeft="35dp"
        android:layout_marginRight="35dp"
@@ -81,7 +81,8 @@
        app:passwordToggleTint="@color/gray"
        android:textColorHint="#d4d6d7"
        >
-      <com.google.android.material.textfield.TextInputEditText
+      <EditText
+          android:id="@+id/phone_number"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:inputType="number"
@@ -106,10 +107,11 @@
        app:passwordToggleTint="@color/gray"
        android:textColorHint="#d4d6d7"
        >
-      <com.google.android.material.textfield.TextInputEditText
+      <EditText
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:inputType="textPassword"
+          android:id="@+id/etRegPassword"
           android:imeOptions="actionUnspecified"
           />
       />
@@ -133,6 +135,7 @@
        android:layout_height="50dp"
        android:layout_gravity="center"
        android:text="Sign Up"
+
        android:textSize="17sp"
        android:textColor="@color/white"
        android:fontFamily="@font/poppins"
