@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
+    private FirebaseAuth firebaseAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
     public void start_activity(){
         Intent main = new Intent(this,layout_2.class);
         startActivity(main);

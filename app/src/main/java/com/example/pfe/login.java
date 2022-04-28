@@ -1,5 +1,6 @@
 package com.example.pfe;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,15 +14,24 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class login extends AppCompatActivity {
 
     EditText email;
+    TextInputEditText password;
     Button login;
     TextInputLayout emailError;
     boolean isEmailValid;
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +39,17 @@ public class login extends AppCompatActivity {
         color_text();
         start();
         Back();
-        email = (EditText) findViewById(R.id.email);
+        email = (EditText) findViewById(R.id.emailLogin);
         login = (Button) findViewById(R.id.btn_week);
+        password = findViewById(R.id.PasswordLogin);
         emailError = (TextInputLayout) findViewById(R.id.emailError);
+        mAuth = FirebaseAuth.getInstance();
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SetValidation();
+                userLogin();
             }
         });
     }
@@ -86,5 +100,29 @@ public class login extends AppCompatActivity {
             emailError.setErrorEnabled(false);
         }
 
+    }
+    void userLogin()
+    {
+        String Lemail = email.getText().toString().trim();
+        String Lpassword = password.getText().toString().trim();
+        if(Lemail.isEmpty() && Lpassword.isEmpty())
+        {
+//            email.setError("entre your name");
+            password.setError("enter your password");
+//            email.requestFocus();
+            password.requestFocus();
+            return;
+        }
+        mAuth.signInWithEmailAndPassword(Lemail,Lpassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    startActivity(new Intent(login.this,home_map.class));
+                }
+                else {
+                    Toast.makeText(login.this,"bad",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }
