@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    private FirebaseAuth firebaseAuth;
-    FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth mAuth;
+
+
     public void start_activity(){
-        Intent main = new Intent(this,layout_2.class);
+        Intent main = new Intent( MainActivity.this,layout_2.class);
         startActivity(main);
     }
 
@@ -33,14 +35,27 @@ public class MainActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
             }
             public void onFinish() {
-                start_activity();
+                mAuth = FirebaseAuth.getInstance();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (mAuth.getCurrentUser() != null){
+                            startActivity(new Intent(MainActivity.this, home_map.class));
+                        }else {
+                            start_activity();
+                        }
+                        finish();
+                    }
+                }, 0);
+
             }
         }.start();
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
+
 }
