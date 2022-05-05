@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_map"
+        android:icon="@drawable/map"
+        android:fontFamily="@font/poppins"
+        android:title="map" />
+
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/search"
+        android:fontFamily="@font/poppins"
+        android:title="search" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/notification"
+        android:fontFamily="@font/poppins"
+        android:title="notification" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/man"
+        android:fontFamily="@font/poppins"
+        android:title="profile" />
+</menu>

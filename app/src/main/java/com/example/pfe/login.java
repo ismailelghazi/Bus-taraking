@@ -1,20 +1,18 @@
 package com.example.pfe;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,6 +29,7 @@ public class login extends AppCompatActivity {
     TextInputLayout emailError;
     boolean isEmailValid;
     FirebaseAuth mAuth;
+    TextView Forgot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,7 @@ public class login extends AppCompatActivity {
         password = findViewById(R.id.PasswordLogin);
         emailError = (TextInputLayout) findViewById(R.id.emailError);
         mAuth = FirebaseAuth.getInstance();
-
+        Forgot();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +61,18 @@ public class login extends AppCompatActivity {
                 openActivity2();
             }
         });
+    }
+    void Forgot()
+    {
+        TextView Forgot = findViewById(R.id.Forgot);
+        Intent intent = new Intent(this, optPassword.class);
+        Forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+
     }
     void color_text()
     {

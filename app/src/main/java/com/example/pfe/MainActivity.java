@@ -1,12 +1,13 @@
 package com.example.pfe;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -36,14 +37,24 @@ public class MainActivity extends AppCompatActivity {
             }
             public void onFinish() {
                 mAuth = FirebaseAuth.getInstance();
-
+                SharedPreferences preferences = getSharedPreferences("PREFERENCE",MODE_PRIVATE);
+                String F = preferences.getString("FirstTimeInstall","");
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         if (mAuth.getCurrentUser() != null){
                             startActivity(new Intent(MainActivity.this, home_map.class));
                         }else {
-                            start_activity();
+                                if (F.equals("Yes")){
+                                    startActivity(new Intent(MainActivity.this, login.class));
+
+                                }
+                                else {
+                                    SharedPreferences.Editor edit = preferences.edit();
+                                    edit.putString("FirstTimeInstall","Yes");
+                                    edit.apply();
+                                    start_activity();
+                                }
                         }
                         finish();
                     }

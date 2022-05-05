@@ -1,7 +1,5 @@
 package com.example.pfe;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -15,11 +13,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.pfe.models.user;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,18 +25,20 @@ import java.util.Objects;
 public class home extends AppCompatActivity {
 
     EditText email,etRegPassword,phone_number,name;
-    Button login,btn_week;
+    Button login;
     TextInputLayout emailError;
     boolean isEmailValid;
     FirebaseAuth mAuth;
 
-
+    public void start_activity(){
+        Intent main = new Intent( home.this,layout_2.class);
+        startActivity(main);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         color_text();
-        start();
         emailError = findViewById(R.id.emailError);
         email = findViewById(R.id.email);
         etRegPassword = findViewById(R.id.etRegPassword);
@@ -55,7 +54,10 @@ public class home extends AppCompatActivity {
                 register();
 
             }
+
         });
+        start();
+
 
 
 
@@ -117,22 +119,16 @@ public class home extends AppCompatActivity {
             etRegPassword.requestFocus();
             return;
         }
-            mAuth.createUserWithEmailAndPassword(remail, rpassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        user User = new user(fullName, remail,phone);
-                        FirebaseDatabase.getInstance().getReference("User").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser())
-                                .getUid()).setValue(User).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
+            mAuth.createUserWithEmailAndPassword(remail, rpassword).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    user User = new user(fullName, remail,phone,rpassword);
+                    FirebaseDatabase.getInstance().getReference("User").child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser())
+                            .getUid()).setValue(User).addOnCompleteListener(task1 -> {
+                                if (task1.isSuccessful()) {
                                     Toast.makeText(home.this, "good", Toast.LENGTH_LONG).show();
-
+                                    //start_activity();
                                 }
-                            }
-                        });
-                    }
+                            });
                 }
             });
     }
