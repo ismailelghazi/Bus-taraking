@@ -5,6 +5,10 @@ import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pfe.pages.map;
+import com.example.pfe.pages.nofication;
+import com.example.pfe.pages.profile;
+import com.example.pfe.pages.search;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

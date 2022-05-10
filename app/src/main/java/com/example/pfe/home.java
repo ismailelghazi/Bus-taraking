@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pfe.animation.layout_2;
 import com.example.pfe.models.user;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +32,7 @@ public class home extends AppCompatActivity {
     FirebaseAuth mAuth;
 
     public void start_activity(){
-        Intent main = new Intent( home.this,layout_2.class);
+        Intent main = new Intent( home.this, layout_2.class);
         startActivity(main);
     }
     @Override

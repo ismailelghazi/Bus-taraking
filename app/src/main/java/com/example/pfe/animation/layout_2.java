@@ -1,8 +1,4 @@
-package com.example.pfe;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.viewpager2.widget.ViewPager2;
+package com.example.pfe.animation;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,6 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager2.widget.ViewPager2;
+
+import com.example.pfe.R;
+import com.example.pfe.home;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.pfe;
+package com.example.pfe.animation;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +9,9 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pfe.R;
+import com.example.pfe.home_map;
+import com.example.pfe.login;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void start_activity(){
-        Intent main = new Intent( MainActivity.this,layout_2.class);
+        Intent main = new Intent( MainActivity.this, layout_2.class);
         startActivity(main);
     }
 

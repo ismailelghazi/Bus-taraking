@@ -1,4 +1,4 @@
-package com.example.pfe;
+package com.example.pfe.animation;
 
 public class OnboardingItem {
     private int image;
