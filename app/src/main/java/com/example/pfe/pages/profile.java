@@ -73,8 +73,4 @@ public class profile extends Fragment {
 
     }
 
-    public void start()
-    {
-
-    }
 }

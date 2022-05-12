@@ -37,4 +37,35 @@
         <item name="android:paddingTop">12dp</item>
         <item name="android:paddingBottom">10dp</item>
     </style>
+    <!--menu-->
+    <style name="viewParent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="viewParent.headerText">
+        <item name="android:textColor">@color/black</item>
+<!--        <item name="android:textSize">10sp</item>-->
+
+    </style>
+
+    <style name="viewParent.headerText.settingsMiniTitle">
+        <item name="android:textColor">@color/bleu</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">60dp</item>
+    </style>
+
+    <style name="settingsText" parent="viewParent.headerText.settingsMiniTitle">
+        <item name="android:textColor">#2A3037</item>
+<!--        <item name="android:layout_gravity">center</item>-->
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/poppinsmedium</item>
+        <item name="android:drawablePadding">20dp</item>
+    </style>
+    <style name="viewParent.headerText.settingsTextIcon" parent="settingsText">
+        <item name="android:drawableRight">@drawable/back_menu</item>
+        <item name="android:layout_marginLeft">55dp</item>
+    </style>
+
 </resources>

@@ -14,6 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.pfe.R;
 import com.example.pfe.home;
+import com.example.pfe.models.OnboardingItem;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
