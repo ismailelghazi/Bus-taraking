@@ -15,6 +15,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 
 ///**
 // * A simple {@link Fragment} subclass.
@@ -74,14 +75,14 @@ private GoogleMap mMap;
                 mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                 mMap.clear(); //clear old markers
                 CameraPosition googlePlex = CameraPosition.builder()
-                        .target(new LatLng(27.1402948, -13.2535731))
-                        .zoom(10)
-                        .bearing(0)
-                        .tilt(45)
+                        .target(new LatLng(27.1500, -13.1991))
+                        .zoom(14)
                         .build();
 
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10000, null);
-
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 1000, null);
+                final LatLngBounds Laayoune = new LatLngBounds(
+                        new LatLng(27.1500, -13.1991) , new LatLng(27.1500, -13.1991));
+                mMap.setLatLngBoundsForCameraTarget(Laayoune);
 
             }
         });
