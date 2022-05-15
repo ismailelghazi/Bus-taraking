@@ -4,7 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.profile"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/koulchi">
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -20,6 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Julia lingo"/>
     </LinearLayout>
+
     <ImageView
         android:layout_marginLeft="300dp"
         android:layout_width="wrap_content"
@@ -27,24 +31,38 @@
         android:id="@+id/exit"
         android:src="@drawable/exit">
     </ImageView>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"
+        android:id="@+id/line"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/line"
+        >
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_marginRight="60dp"
+            android:drawableLeft="@drawable/man_profile"
+            android:text="Profile" />
 
-    <TextView
-        style="@style/viewParent.headerText.settingsTextIcon"
-        android:layout_width="282dp"
-        android:layout_marginTop="150dp"
-        android:drawableLeft="@drawable/man_profile"
-        android:text="Profile" />
-
-    <TextView
-        style="@style/viewParent.headerText.settingsTextIcon"
-        android:layout_width="282dp"
-        android:drawableLeft="@drawable/mycard"
-        android:text="My card" />
-    <TextView
-        style="@style/viewParent.headerText.settingsTextIcon"
-        android:layout_width="282dp"
-        android:drawableLeft="@drawable/ticket"
-        android:text="My Ticket" />
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_marginRight="60dp"
+            android:drawableLeft="@drawable/mycard"
+            android:text="My card" />
+        <TextView
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:layout_width="match_parent"
+            android:layout_marginRight="60dp"
+            android:drawableLeft="@drawable/ticket"
+            android:text="My Ticket" />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_marginTop="100dp"
@@ -52,12 +70,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center">
+
         <ImageView
             android:id="@+id/myImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/rectangle"
-            />
+            android:src="@drawable/rectangle" />
         <ImageView
             android:id="@+id/myImageViewText"
             android:layout_width="wrap_content"
@@ -79,12 +97,16 @@
             android:gravity="center"
             android:src="@drawable/hours"
             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_below="@+id/myImageView"
+            android:layout_alignEnd="@+id/myImageView"
+            android:gravity="center"
+            android:text="Tracking 2022" />
+
     </RelativeLayout>
-    <TextView
-        android:layout_marginTop="80dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tracking 2022"
-        android:gravity="center"
-        />
+
+
 </LinearLayout>

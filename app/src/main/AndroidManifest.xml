@@ -9,6 +9,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pfe">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCl33uVzMagCTTqfvnqS8MTYXkxB_EeCW4"/>
         <activity
             android:name=".home_map"
             android:exported="false"
@@ -36,5 +39,8 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
 
 </manifest>

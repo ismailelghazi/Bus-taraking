@@ -15,6 +15,7 @@
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/drawable/hours.xml" value="0.1435" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/drawable/key.xml" value="0.184" />
+        <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/drawable/line.xml" value="0.1435" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/drawable/man.xml" value="0.2105" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/drawable/man_profile.xml" value="0.2065" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/drawable/map.xml" value="0.2105" />
@@ -33,14 +34,14 @@
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/drawable/vector_login.xml" value="0.2175" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/font/font.xml" value="0.1675925925925926" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/activity_home.xml" value="0.2" />
-        <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/activity_home_map.xml" value="0.152" />
+        <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/activity_home_map.xml" value="0.536" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/activity_main.xml" value="0.136" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/activity_opt_password.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/forgot_password.xml" value="0.264" />
-        <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/fragment_map.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/fragment_map.xml" value="0.11270491803278689" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/fragment_nofication.xml" value="0.128" />
-        <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/fragment_profile.xml" value="0.31016731016731014" />
+        <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/fragment_search.xml" value="0.19709277469003847" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/item_container_onboarding.xml" value="0.1" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/layout/layout_2.xml" value="0.264" />
