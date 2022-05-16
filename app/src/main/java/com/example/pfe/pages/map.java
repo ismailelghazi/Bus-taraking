@@ -13,9 +13,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
 
 ///**
 // * A simple {@link Fragment} subclass.
@@ -72,17 +70,26 @@ private GoogleMap mMap;
         mapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap mMap) {
-                mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                mMap.clear(); //clear old markers
-                CameraPosition googlePlex = CameraPosition.builder()
-                        .target(new LatLng(27.1500, -13.1991))
-                        .zoom(14)
-                        .build();
+                    mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                    LatLng cityLatLng = new LatLng(27.1500,-13.1991);
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng,14));
+                    mMap.clear(); //clear old markers
+                    mMap.setMinZoomPreference(mMap.getCameraPosition().zoom);
 
-                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 1000, null);
-                final LatLngBounds Laayoune = new LatLngBounds(
-                        new LatLng(27.1500, -13.1991) , new LatLng(27.1500, -13.1991));
-                mMap.setLatLngBoundsForCameraTarget(Laayoune);
+
+
+
+
+//                CameraPosition googlePlex = CameraPosition.builder()
+//                        .target(new LatLng(27.1500, -13.1991))
+//                        .zoom(15)
+//                        .build();
+//
+//                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10, null);
+//                final LatLngBounds Laayoune = new LatLngBounds(
+//                        new LatLng(27.1500, -13.1991) , new LatLng(27.1500, -13.1991));
+////                mMap.setLatLngBoundsForCameraTarget(Laayoune);
+//                mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(Laayoune, 0));
 
             }
         });
