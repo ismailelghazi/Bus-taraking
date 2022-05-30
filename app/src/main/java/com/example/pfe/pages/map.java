@@ -73,13 +73,9 @@ private GoogleMap mMap;
                     mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                     LatLng cityLatLng = new LatLng(27.1500,-13.1991);
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng,14));
-                    mMap.clear(); //clear old markers
+//                    mMap.clear(); //clear old markers
                     mMap.setMinZoomPreference(mMap.getCameraPosition().zoom);
-
-
-
-
-
+                    mMap.getMapType();
 //                CameraPosition googlePlex = CameraPosition.builder()
 //                        .target(new LatLng(27.1500, -13.1991))
 //                        .zoom(15)
@@ -88,7 +84,7 @@ private GoogleMap mMap;
 //                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10, null);
 //                final LatLngBounds Laayoune = new LatLngBounds(
 //                        new LatLng(27.1500, -13.1991) , new LatLng(27.1500, -13.1991));
-////                mMap.setLatLngBoundsForCameraTarget(Laayoune);
+//                mMap.setLatLngBoundsForCameraTarget(Laayoune);
 //                mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(Laayoune, 0));
 
             }

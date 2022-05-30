@@ -1,17 +1,13 @@
 package com.example.pfe.pages;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.pfe.R;
-import com.example.pfe.login;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class profile extends Fragment {
 
@@ -59,16 +55,16 @@ public class profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_profile, container, false);
-        ImageView exits =  v.findViewById(R.id.exit);
-        exits.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getActivity(), login.class);
-                startActivity(intent);
-
-            }
-        });
+//        ImageView exits =  v.findViewById(R.id.exit);
+//        exits.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FirebaseAuth.getInstance().signOut();
+//                Intent intent = new Intent(getActivity(), login.class);
+//                startActivity(intent);
+//
+//            }
+//        });
         return v;
 
     }

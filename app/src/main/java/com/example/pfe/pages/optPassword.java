@@ -1,4 +1,4 @@
-package com.example.pfe;
+package com.example.pfe.pages;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.pfe.R;
 
 public class optPassword extends AppCompatActivity {
 

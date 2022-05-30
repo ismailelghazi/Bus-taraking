@@ -6,7 +6,7 @@
     android:background="@drawable/vector_hero"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".home">
+    tools:context=".pages.home">
 
    <TextView
        android:layout_marginTop="95dp"

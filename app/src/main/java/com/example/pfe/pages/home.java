@@ -1,4 +1,4 @@
-package com.example.pfe;
+package com.example.pfe.pages;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pfe.R;
 import com.example.pfe.animation.layout_2;
 import com.example.pfe.models.user;
 import com.google.android.material.textfield.TextInputLayout;
@@ -78,7 +79,7 @@ public class home extends AppCompatActivity {
     }
 
     public void openActivity2() {
-        Intent intent = new Intent(this, login.class);
+        Intent intent = new Intent(this, com.example.pfe.pages.login.class);
         startActivity(intent);
     }
 
@@ -127,7 +128,7 @@ public class home extends AppCompatActivity {
                             .getUid()).setValue(User).addOnCompleteListener(task1 -> {
                                 if (task1.isSuccessful()) {
                                     Toast.makeText(home.this, "good", Toast.LENGTH_LONG).show();
-                                    //start_activity();
+                                    start_activity();
                                 }
                             });
                 }

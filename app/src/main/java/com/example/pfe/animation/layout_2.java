@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.pfe.R;
-import com.example.pfe.home;
+import com.example.pfe.pages.home;
 import com.example.pfe.models.OnboardingItem;
 import com.google.android.material.button.MaterialButton;
 

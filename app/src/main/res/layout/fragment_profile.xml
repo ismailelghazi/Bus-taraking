@@ -6,31 +6,23 @@
     tools:context=".pages.profile"
     android:orientation="vertical"
     android:id="@+id/koulchi">
-
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:clickable="true">
+        android:gravity="center">
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome"/>
-        <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/hero"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Julia lingo"/>
-    </LinearLayout>
-
-    <ImageView
-        android:layout_marginLeft="300dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/exit"
-        android:src="@drawable/exit">
-    </ImageView>
+            android:text="Welcome Back"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,6 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/rectangle" />
+
         <ImageView
             android:id="@+id/myImageViewText"
             android:layout_width="wrap_content"
@@ -85,8 +78,8 @@
             android:layout_alignBottom="@+id/myImageView"
             android:layout_marginRight="26dp"
             android:gravity="center"
-            android:src="@drawable/can"
-             />
+            android:src="@drawable/can" />
+
         <ImageView
             android:id="@+id/myImage"
             android:layout_width="wrap_content"
@@ -95,8 +88,7 @@
             android:layout_alignBottom="@+id/myImageView"
             android:layout_marginLeft="25dp"
             android:gravity="center"
-            android:src="@drawable/hours"
-            />
+            android:src="@drawable/hours" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

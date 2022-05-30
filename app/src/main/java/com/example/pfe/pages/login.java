@@ -1,4 +1,4 @@
-package com.example.pfe;
+package com.example.pfe.pages;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pfe.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -128,7 +129,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    startActivity(new Intent(login.this,home_map.class));
+                    startActivity(new Intent(login.this, home_map.class));
                 }
                 else {
                     Toast.makeText(login.this,"bad",Toast.LENGTH_LONG).show();
