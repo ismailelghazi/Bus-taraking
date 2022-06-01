@@ -39,7 +39,7 @@ public class FirebaseDataHelper {
                 station stationss = KeyNode.getValue(station.class);
                 stations.add(stationss);
             }
-            dataStatus.DataIsLoaded(stations,keys);
+                dataStatus.DataIsLoaded(stations,keys);
             }
 
             @Override

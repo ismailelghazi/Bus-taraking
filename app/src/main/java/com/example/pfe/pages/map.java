@@ -1,6 +1,7 @@
 package com.example.pfe.pages;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.pfe.R;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 ///**
 // * A simple {@link Fragment} subclass.
@@ -22,7 +28,9 @@ import com.google.android.gms.maps.model.LatLng;
 // */
 public class map extends Fragment   {
 
-//    // TODO: Rename parameter arguments, choose names that match
+
+
+    //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 //    private static final String ARG_PARAM1 = "param1";
 //    private static final String ARG_PARAM2 = "param2";
@@ -54,12 +62,16 @@ public class map extends Fragment   {
 //    }
 //
 private GoogleMap mMap;
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference mDbRef = mDatabase.getReference("stations");
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
     }
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -72,10 +84,32 @@ private GoogleMap mMap;
             public void onMapReady(GoogleMap mMap) {
                     mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                     LatLng cityLatLng = new LatLng(27.1500,-13.1991);
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng,14));
+                LatLngBounds ADELAIDE = new LatLngBounds(
+                        new LatLng(-35.0, 138.58), new LatLng(-34.9, 138.61));
+// Constrain the camera target to the Adelaide bounds.
+                mMap.setLatLngBoundsForCameraTarget(ADELAIDE);
+
+//                    mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(cityLatLng, 0));
+//                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng,14));
 //                    mMap.clear(); //clear old markers
                     mMap.setMinZoomPreference(mMap.getCameraPosition().zoom);
                     mMap.getMapType();
+                mDbRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                            String LongX = ds.child("0").getValue(String.class);
+                            String LongY = ds.child("1").getValue(String.class);
+                            Log.d("TAG", LongX + " | " + LongY);
+                        }
+//                        Map<String, Object> map = (Map<String, Object>) dataSnapshot.child("").getValue();
+//                        System.out.println(map);
+                    }
+                    @Override
+                    public void onCancelled(DatabaseError error) {
+                        Log.w("Failed to read value.", error.toException());
+                    }
+                });
 //                CameraPosition googlePlex = CameraPosition.builder()
 //                        .target(new LatLng(27.1500, -13.1991))
 //                        .zoom(15)
