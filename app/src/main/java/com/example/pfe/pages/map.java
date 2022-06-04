@@ -1,5 +1,9 @@
 package com.example.pfe.pages;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,14 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.pfe.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -68,11 +77,26 @@ private GoogleMap mMap;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
+    private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
+    }
+    private Bitmap convert(){
+        Drawable vectorDrawable = ContextCompat.getDrawable(getContext(),R.drawable.bus);
 
+        // below line is use to set bounds to our vector drawable.
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
 
+        // below line is use to create a bitmap for our
+        // drawable which we have added.
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        return bitmap;
+    }
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -84,42 +108,35 @@ private GoogleMap mMap;
             public void onMapReady(GoogleMap mMap) {
                     mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                     LatLng cityLatLng = new LatLng(27.1500,-13.1991);
-                LatLngBounds ADELAIDE = new LatLngBounds(
-                        new LatLng(-35.0, 138.58), new LatLng(-34.9, 138.61));
-// Constrain the camera target to the Adelaide bounds.
-                mMap.setLatLngBoundsForCameraTarget(ADELAIDE);
-
-//                    mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(cityLatLng, 0));
-//                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng,14));
-//                    mMap.clear(); //clear old markers
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLatLng,12));
                     mMap.setMinZoomPreference(mMap.getCameraPosition().zoom);
                     mMap.getMapType();
+                   LatLngBounds ADELAIDE = new LatLngBounds(
+                        new LatLng(27.15, -13.1991), new LatLng(27.17, -13.17));
+// Constrain the camera target to the Adelaide bounds.
+                mMap.setLatLngBoundsForCameraTarget(ADELAIDE);
                 mDbRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
+
                         for(DataSnapshot ds : dataSnapshot.getChildren()) {
                             String LongX = ds.child("0").getValue(String.class);
                             String LongY = ds.child("1").getValue(String.class);
-                            Log.d("TAG", LongX + " | " + LongY);
+                            Log.d("TAG", LongX + " / " + LongY);
+
+                            LatLng latLng = new LatLng(Float.parseFloat(LongX), Float.parseFloat(LongY));
+                            mMap.addMarker(new MarkerOptions().position(latLng).title("bus").icon(bitmapDescriptorFromVector(getActivity(), R.drawable.bus)));
+//                            MarkerOptions markerOptions = new MarkerOptions();
+//                            markerOptions.position(latLng);
                         }
-//                        Map<String, Object> map = (Map<String, Object>) dataSnapshot.child("").getValue();
-//                        System.out.println(map);
+
                     }
+
                     @Override
                     public void onCancelled(DatabaseError error) {
                         Log.w("Failed to read value.", error.toException());
                     }
                 });
-//                CameraPosition googlePlex = CameraPosition.builder()
-//                        .target(new LatLng(27.1500, -13.1991))
-//                        .zoom(15)
-//                        .build();
-//
-//                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10, null);
-//                final LatLngBounds Laayoune = new LatLngBounds(
-//                        new LatLng(27.1500, -13.1991) , new LatLng(27.1500, -13.1991));
-//                mMap.setLatLngBoundsForCameraTarget(Laayoune);
-//                mMap.moveCamera(CameraUpdateFactory.newLatLngBounds(Laayoune, 0));
 
             }
         });

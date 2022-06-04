@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Pfe">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCl33uVzMagCTTqfvnqS8MTYXkxB_EeCW4"/>
+            android:value="AIzaSyASBj3QWk8_Tjt2VjFd8btyBYy9ZA_9n7g"/>
         <activity
             android:name=".pages.home_map"
             android:exported="false"
