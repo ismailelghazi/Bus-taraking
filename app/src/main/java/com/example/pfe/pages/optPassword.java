@@ -18,6 +18,8 @@ public class optPassword extends AppCompatActivity {
         setContentView(R.layout.forgot_password);
         Back();
         Forgot();
+        Forgot1();
+        Forgot2();
     }
 
 
@@ -39,6 +41,34 @@ public class optPassword extends AppCompatActivity {
     {
         TextView Forgot = findViewById(R.id.Login);
         Intent intent = new Intent(this, login.class);
+        Forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+
+    }
+    public void start_activity(){
+        Intent main = new Intent( this, otp.class);
+        startActivity(main);
+    }
+    void Forgot1()
+    {
+        TextView Forgot = findViewById(R.id.number_phone);
+        Intent intent = new Intent(this, otp.class);
+        Forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+
+    }
+    void Forgot2()
+    {
+        TextView Forgot = findViewById(R.id.email);
+        Intent intent = new Intent(this, OTP_Messanger.class);
         Forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

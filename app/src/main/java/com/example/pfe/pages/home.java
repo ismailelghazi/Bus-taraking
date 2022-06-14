@@ -33,7 +33,7 @@ public class home extends AppCompatActivity {
     FirebaseAuth mAuth;
 
     public void start_activity(){
-        Intent main = new Intent( home.this, layout_2.class);
+        Intent main = new Intent( home.this, map.class);
         startActivity(main);
     }
     @Override
@@ -107,6 +107,7 @@ public class home extends AppCompatActivity {
         }
 
     }
+
     public void register() {
         String remail = email.getText().toString().trim();
         String fullName = name.getText().toString();

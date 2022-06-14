@@ -6,23 +6,44 @@
     tools:context=".pages.profile"
     android:orientation="vertical"
     android:id="@+id/koulchi">
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
-        <TextView
-            android:id="@+id/hero"
-            android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+     <RelativeLayout
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical">
+
+         <TextView
+             android:id="@+id/hero"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:gravity="center"
+             android:text="Welcome Back"
+             android:textColor="@color/gray"
+             android:textSize="12sp"
+             android:textStyle="bold" />
+
+         <TextView
+             android:id="@+id/username"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="15dp"
+             android:fontFamily="@font/poppins"
+             android:textColor="#2A3037"
+             android:textSize="15sp" />
+     </RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome Back"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </RelativeLayout>
+            android:src="@drawable/exit"
+            android:id="@+id/exit"
+            android:layout_marginLeft="250dp"/>
+
+    </LinearLayout>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

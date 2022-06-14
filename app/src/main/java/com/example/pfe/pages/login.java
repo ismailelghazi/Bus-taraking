@@ -1,5 +1,6 @@
 package com.example.pfe.pages;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pfe.R;
@@ -136,5 +138,43 @@ public class login extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+
+// Below code calls on back button clicked so define anything in this will run on
+// back button.
+
+
+        AlertDialog.Builder BackAlertDialog = new AlertDialog.Builder(login.this);
+
+        BackAlertDialog.setTitle("Activity Exit Alert");
+
+        BackAlertDialog.setMessage("Are you sure want to exit ?");
+
+
+        BackAlertDialog.setPositiveButton("NO",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //Cancel alert dialog box .
+                        dialog.cancel();
+                    }
+                });
+
+        BackAlertDialog.setNegativeButton("YES",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+
+                        //Exit from activity.
+                        finish();
+                    }
+                });
+
+        BackAlertDialog.show();
+
+        return;
     }
 }

@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".pages.search">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:text="Search"/>
+   <ListView
+       android:id="@+id/List"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:divider="@android:color/transparent"
+       android:dividerHeight="10dp"
+       android:paddingLeft="1dp"
+       android:paddingRight="1dp"
+       android:paddingBottom="2dp"
+       android:paddingStart="0dp"
+       android:paddingEnd="0dp"
+       app:shapeAppearanceOverlay="@style/CustomShapeOVerlay"
+       />
 
-</FrameLayout>
+</RelativeLayout>

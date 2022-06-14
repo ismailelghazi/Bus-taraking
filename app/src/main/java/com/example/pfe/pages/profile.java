@@ -1,53 +1,52 @@
 package com.example.pfe.pages;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.pfe.R;
+import com.example.pfe.models.user;
+import com.firebase.ui.auth.data.model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class profile extends Fragment {
 
-//    // TODO: Rename parameter arguments, choose names that match
-//    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//    private static final String ARG_PARAM1 = "param1";
-//    private static final String ARG_PARAM2 = "param2";
-//
-//    // TODO: Rename and change types of parameters
-//    private String mParam1;
-//    private String mParam2;
-//
-//    public profile() {
-//        // Required empty public constructor
-//    }
-//
-//    /**
-//     * Use this factory method to create a new instance of
-//     * this fragment using the provided parameters.
-//     *
-//     * @param param1 Parameter 1.
-//     * @param param2 Parameter 2.
-//     * @return A new instance of fragment profile.
-//     */
-//    // TODO: Rename and change types and number of parameters
-//    public static profile newInstance(String param1, String param2) {
-//        profile fragment = new profile();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
-//
+    FirebaseUser users;
+    DatabaseReference Reference;
+    private  String userID;
 //@Override
 //public void onCreate(Bundle savedInstanceState) {
 //    super.onCreate(savedInstanceState);
+//    users = FirebaseAuth.getInstance().getCurrentUser();
+//    Reference= FirebaseDatabase.getInstance().getReference("User");
+//    userID = users.getUid();
+//    Reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+//        @Override
+//        public void onDataChange(@NonNull DataSnapshot snapshot) {
+//            user userP = snapshot.getValue(user.class);
+//            if (userP!=null)
+//        }
+//
+//        @Override
+//        public void onCancelled(@NonNull DatabaseError error) {
+//
+//        }
+//    });
 //
 //}
-
 
 
     @Override
@@ -55,16 +54,37 @@ public class profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_profile, container, false);
-//        ImageView exits =  v.findViewById(R.id.exit);
-//        exits.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                FirebaseAuth.getInstance().signOut();
-//                Intent intent = new Intent(getActivity(), login.class);
-//                startActivity(intent);
-//
-//            }
-//        });
+        ImageView exits = (ImageView) v.findViewById(R.id.exit);
+        exits.setOnClickListener(v1 -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getActivity(), home.class);
+            startActivity(intent);
+
+
+        });
+        users = FirebaseAuth.getInstance().getCurrentUser();
+        Reference= FirebaseDatabase.getInstance().getReference("User");
+        userID = users.getUid();
+        Reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                user userP = snapshot.getValue(user.class);
+                if (userP!=null)
+                {
+                    TextView Full =  (TextView) v.findViewById(R.id.username);
+                    String fullName = userP.fullName;
+                    System.out.println(fullName);
+                    Full.setText(fullName);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         return v;
 
     }

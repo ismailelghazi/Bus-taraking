@@ -51,6 +51,26 @@
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/menu/navigation.xml" value="0.2" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2265" />
         <entry key="..\:/Users/Ismai/AndroidStudioProjects/pfe/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2265" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/drawable/bus.xml" value="0.204" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/drawable/bus_serch.xml" value="0.204" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/drawable/bus_serch1.xml" value="0.204" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/drawable/bus_serch2.xml" value="0.204" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/drawable/onboarding_indicator_inactive.xml" value="0.2025" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/drawable/search.xml" value="0.2025" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/activity_home_map.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/activity_login.xml" value="0.225" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/activity_otp.xml" value="0.264" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/activity_otp_messanger.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/forgot_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/fragment_map.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/fragment_nofication.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/fragment_search.xml" value="0.264" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/item_container_onboarding.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/layout_2.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/Ismai/Desktop/pfe/app/src/main/res/layout/otp.xml" value="0.253125" />
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/checked.xml" value="0.105" />
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/custom_checkbox.xml" value="0.105" />
         <entry key="..\:/Users/hp/Desktop/PFE/app/src/main/res/drawable/unchecked.xml" value="0.105" />

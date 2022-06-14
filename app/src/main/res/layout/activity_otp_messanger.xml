@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.optPassword"
+    android:orientation="vertical"
+    android:background="@drawable/forgot">
+    <ImageView
+        android:id="@+id/back"
+        android:layout_marginTop="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/back_bnt"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/message"
+        />
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OTP Verification"
+        android:gravity="center"
+        android:fontFamily="@font/poppins"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="We will you send you an One Time Password on this mobile number"
+        android:textSize="10dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="10dp"
+        style="@style/MyDenseOutlined"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your email"
+        app:passwordToggleTint="@color/gray"
+        android:textColorHint="#d4d6d7"
+        >
+        <EditText
+            android:id="@+id/idEdtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionUnspecified"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/idBtnGetOtp"
+            android:layout_width="190dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="Send Email"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            app:shapeAppearanceOverlay="@style/CustomShapeOVerlay"
+            />
+    </LinearLayout>
+
+</LinearLayout>
