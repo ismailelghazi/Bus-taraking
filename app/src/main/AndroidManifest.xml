@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pfe">
         <activity
+            android:name=".custemer"
+            android:exported="false" />
+        <activity
             android:name=".pages.OTP_Messanger"
             android:exported="false" />
         <activity

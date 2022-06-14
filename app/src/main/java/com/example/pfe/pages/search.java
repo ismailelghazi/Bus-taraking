@@ -4,14 +4,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.pfe.R;
+import com.example.pfe.controller.custmerAdapter;
 
 
 public class search extends Fragment {
-
+    String bus[]= {"bus1","bus2","bus3"};
+    int busim[]={R.drawable.bus_serch,R.drawable.bus_serch1,R.drawable.bus_serch2};
+    ListView listView;
 //    // TODO: Rename parameter arguments, choose names that match
 //    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 //    private static final String ARG_PARAM1 = "param1";
@@ -56,6 +61,11 @@ public class search extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+        View v= inflater.inflate(R.layout.fragment_search, container, false);
+        listView = (ListView) v.findViewById(R.id.List);
+        custmerAdapter adapter = new custmerAdapter(getActivity(), busim);
+        listView.setAdapter(adapter);
+        return v;
+
     }
 }
