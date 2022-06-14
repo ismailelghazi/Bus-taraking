@@ -91,7 +91,7 @@ public class search extends Fragment {
                 List<Integer> images = new ArrayList<Integer>();
                 int j = 0;
                 for (int i = 0; i < busId.size(); i++) {
-                    images.add(busim[i]);
+                    images.add(busim[j]);
                     j=j+1;
                     if(j==3){
                         j=0;
