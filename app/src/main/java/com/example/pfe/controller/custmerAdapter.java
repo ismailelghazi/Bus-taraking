@@ -15,9 +15,9 @@ public class custmerAdapter extends BaseAdapter {
     String Listbus[];
     int Listbusim[];
     LayoutInflater inflater;
-    public custmerAdapter(Context cnt,String[] bus,int[] busim){
+    public custmerAdapter(Context cnt, int[] busim){
         this.context=cnt;
-        this.Listbus= bus;
+//        this.Listbus= bus;
         this.Listbusim= busim;
         inflater = LayoutInflater.from(cnt);
     }
