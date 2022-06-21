@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pfe">
+    package="com.example.pfe" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,9 +16,12 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Pfe">
+        android:theme="@style/Theme.Pfe" >
         <activity
-            android:name=".custemer"
+            android:name=".notification"
+            android:exported="false" />
+        <activity
+            android:name=".pages.custemer"
             android:exported="false" />
         <activity
             android:name=".pages.OTP_Messanger"
@@ -49,7 +52,7 @@
             android:exported="true" />
         <activity
             android:name=".animation.MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -13,6 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="CustomShapeOVerlay" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">15dp</item>
@@ -20,12 +21,14 @@
         <item name="cornerSizeBottomRight">15dp</item>
         <item name="cornerSizeBottomLeft">15dp</item>
     </style>
+
     <style name="CustomTextInputLayoutStyle.ErrorTextStyle" parent="TextAppearance.Design.Error">
         <item name="android:textSize">1sp</item>
     </style>
+
     <style name="MyDenseOutlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="materialThemeOverlay">@style/MyThemeOverlayOutlinedDense</item>
- 
+
     </style>
 
     <style name="MyThemeOverlayOutlinedDense">
@@ -61,9 +64,19 @@
         <item name="android:fontFamily">@font/poppinsmedium</item>
         <item name="android:drawablePadding">20dp</item>
     </style>
+
     <style name="viewParent.headerText.settingsTextIcon" parent="settingsText">
         <item name="android:drawableRight">@drawable/back_menu</item>
         <item name="android:layout_marginLeft">55dp</item>
     </style>
+
+    <style name="Theme.Pfe.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Pfe.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Pfe.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

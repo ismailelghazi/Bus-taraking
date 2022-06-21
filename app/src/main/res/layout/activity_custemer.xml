@@ -3,36 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".custemer">
+    android:layout_height="wrap_content"
+    tools:context=".pages.custemer"
+    android:background="#C4FFFFFF"
+    android:layout_marginTop="35dp"
+
+    >
 
     <ImageView
         android:id="@+id/imagebus"
-        android:layout_width="103dp"
-        android:layout_height="114dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="1dp" />
-
+        android:layout_marginTop="10dp" />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="40px">
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp">
 
         <TextView
             android:id="@+id/busId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins"
             android:text="test"
-            android:textSize="24sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:text="test"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
                 android:text="test"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <ImageView
                 android:layout_width="34dp"
@@ -58,8 +67,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="test"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
         </LinearLayout>
     </LinearLayout>
+</LinearLayout>
+    <ImageButton
+        android:id="@+id/click"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:background="@drawable/kliybgri"/>
 </LinearLayout>

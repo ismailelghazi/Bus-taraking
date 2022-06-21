@@ -6,16 +6,19 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pfe.R;
+import com.example.pfe.intrface.profileClickListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class home_map extends AppCompatActivity {
+public class home_map extends AppCompatActivity implements profileClickListener {
 
     BottomNavigationView bottomNavigationView;
     map firstFragment = new map();
     nofication thirdFragment = new nofication();
     search secondFragment  = new search();
     profile fourtFragment = new profile();
+    profile_edit profil = new profile_edit();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +54,14 @@ public class home_map extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onProfileClick() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, profil).commit();
 
+    }
 
-
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
+    }
 }

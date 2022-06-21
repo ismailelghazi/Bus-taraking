@@ -4,16 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".pages.search">
+    tools:context=".pages.search"
 
+    android:background="#FFFDFD"
+ >
+   <androidx.appcompat.widget.SearchView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:iconifiedByDefault="false"
+       app:queryHint="Search for Place"
+       android:layout_marginBottom="25dp"/>
    <ListView
+       android:layout_marginTop="50dp"
        android:id="@+id/List"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:divider="@android:color/transparent"
        android:dividerHeight="10dp"
-       android:paddingLeft="1dp"
-       android:paddingRight="1dp"
+       android:paddingLeft="100dp"
+       android:paddingRight="100dp"
        android:paddingBottom="2dp"
        android:paddingStart="0dp"
        android:paddingEnd="0dp"

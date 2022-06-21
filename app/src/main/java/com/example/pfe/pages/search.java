@@ -108,8 +108,6 @@ public class search extends Fragment {
                 Log.w("Failed to read value.", error.toException());
             }
         });
-        // Inflate the layout for this fragment
-
         return v;
 
     }

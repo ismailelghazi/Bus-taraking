@@ -59,6 +59,7 @@
         <TextView
             style="@style/viewParent.headerText.settingsTextIcon"
             android:layout_width="match_parent"
+            android:id="@+id/updateProfile"
             android:layout_marginRight="60dp"
             android:drawableLeft="@drawable/man_profile"
             android:text="Profile" />
