@@ -1,66 +1,73 @@
 package com.example.pfe.pages;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.pfe.R;
+import com.example.pfe.controller.CustmerAdapter1;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-//
-///**
-// * A simple {@link Fragment} subclass.
-// * Use the {@link nofication#newInstance} factory method to
-// * create an instance of this fragment.
-// */
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class nofication extends Fragment {
 
-//    // TODO: Rename parameter arguments, choose names that match
-//    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//    private static final String ARG_PARAM1 = "param1";
-//    private static final String ARG_PARAM2 = "param2";
-//
-//    // TODO: Rename and change types of parameters
-//    private String mParam1;
-//    private String mParam2;
-//
-//    public nofication() {
-//        // Required empty public constructor
-//    }
-//
-//    /**
-//     * Use this factory method to create a new instance of
-//     * this fragment using the provided parameters.
-//     *
-//     * @param param1 Parameter 1.
-//     * @param param2 Parameter 2.
-//     * @return A new instance of fragment nofication.
-//     */
-//    // TODO: Rename and change types and number of parameters
-//    public static nofication newInstance(String param1, String param2) {
-//        nofication fragment = new nofication();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
-//    }
+
+    FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    DatabaseReference mDbRef = mDatabase.getReference("notifications");
+    int busim[]={R.drawable.fg,R.drawable.sd,R.drawable.sd};
+    ListView listView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nofication, container, false);
+        View v= inflater.inflate(R.layout.fragment_nofication, container, false);
+        mDbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Integer> id = new ArrayList<Integer>();
+                List<String> Text= new ArrayList<String>();
+                List<String> day= new ArrayList<String>();
+
+                for(DataSnapshot ds : snapshot.getChildren()) {
+                    //id.add(ds.child("id").getValue(Integer.class));
+                    Text.add(ds.child("day").getValue(String.class));
+                    day.add(ds.child("text").getValue(String.class));
+                    Log.d("TAG", id + " / " + Text+" / "+day);
+                }
+                List<Integer> images = new ArrayList<Integer>();
+                int j = 0;
+                for (int i = 0; i < Text.size(); i++) {
+                    images.add(busim[j]);
+                    j=j+1;
+                    if(j==3){
+                        j=0;
+                    }
+                }
+                listView = (ListView) v.findViewById(R.id.List1);
+                CustmerAdapter1 adapter0 = new CustmerAdapter1(getActivity(),Text,day,images);
+                listView.setAdapter(adapter0);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.w("Failed to read value.", error.toException());
+
+            }
+        });
+        return v;
     }
+
 }

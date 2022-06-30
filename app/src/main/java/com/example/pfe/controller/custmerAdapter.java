@@ -1,5 +1,6 @@
 package com.example.pfe.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,6 @@ import java.util.List;
 
 public class custmerAdapter extends BaseAdapter {
     Context context;
-    String Listbus[];
     List<Integer> Listbusim;
     List<String> busId;
     List<String>  fromId;
@@ -28,7 +28,6 @@ public class custmerAdapter extends BaseAdapter {
         this.fromId = fromId;
         this.toId= toId;
         this.context=cnt;
-//        this.Listbus= bus;
         this.Listbusim= busim;
         inflater = LayoutInflater.from(cnt);
     }
@@ -51,6 +50,7 @@ public class custmerAdapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint("ViewHolder")
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         System.out.println(inflater);
@@ -58,10 +58,10 @@ public class custmerAdapter extends BaseAdapter {
         TextView busIdTV = view.findViewById(R.id.busId);
         TextView toIdTV = view.findViewById(R.id.toId);
         TextView fromIdTV = view.findViewById(R.id.fromid);
+        ImageView Imagbus = view.findViewById(R.id.imagebus);
         fromIdTV.setText(fromId.get(i));
         busIdTV.setText(busId.get(i));
         toIdTV.setText(toId.get(i));
-        ImageView Imagbus = view.findViewById(R.id.imagebus);
         Imagbus.setImageResource(Listbusim.get(i));
         return view;
     }

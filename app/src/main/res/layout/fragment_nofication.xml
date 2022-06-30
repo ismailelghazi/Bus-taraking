@@ -3,23 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".pages.nofication"
     android:background="#f9f9f9">
 
     <ListView
         android:layout_marginTop="50dp"
-        android:id="@+id/List"
+        android:id="@+id/List1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@android:color/transparent"
-        android:dividerHeight="10dp"
+        android:dividerHeight="30dp"
         android:paddingLeft="100dp"
         android:paddingRight="100dp"
         android:paddingBottom="2dp"
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
-        app:shapeAppearanceOverlay="@style/CustomShapeOVerlay"
         />
 
 </LinearLayout>
